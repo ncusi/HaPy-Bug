@@ -1,6 +1,7 @@
 # HaPy-Bug - Human Annotated Python Bug Resolution Dataset
 
 Data and code package is available on https://figshare.com/s/9cbc129a95a8fc3a9640 
+
 Structure (missing data directories are on figshare):
 * 'annotated_data' and 'collective' contain manual annotations extracted from label studio instance
 * 'code' contains scripts used to gather data and prepare dataset
@@ -9,18 +10,18 @@ Structure (missing data directories are on figshare):
 * 'raw_data' contains gathered data before manual annotation
 * 'Paper.ipynb' contains notebook to open manual annotations and replicate paper experiments
 
-Dataset schema for automated tools is in "code/Documentation/Dataset_structure.md"
-Annotations protocol is in "code/Documentation/miniatura_protocol.md"
+Dataset schema for automated tools is in "code/Documentation/Dataset_structure.md". 
+Annotations protocol is in "code/Documentation/miniatura_protocol.md". 
 Annotations schema is as follows:
 * 'annotated_data' contains json files extracted from label studio
 * prefix letter of name of file denotes annotator, for instance "A_1_24.json" was annotated by annotator "A"
 * in file there is a list of annotations, each entry on the list has fields containing 
-** bug description and metadata in "data" field
-** results of annotators actions in "result" field
+  * bug description and metadata in "data" field
+  * results of annotators actions in "result" field
 * Following entries are stored in "result" field as directory 
-** entries with type 'choices' like "annotations-were-problematic", "reviewer-is-sure", "bug-type" contain selected answers
-** entry with type 'cve' contains line and file annotations
-*** subentry "diffsFiles" contains "fileName", assigned category "category" and annotated lines in "lines", divided into "afterChange" and "beforeChange" of specific commit
+  * entries with type 'choices' like "annotations-were-problematic", "reviewer-is-sure", "bug-type" contain selected answers
+  * entry with type 'cve' contains line and file annotations
+    * subentry "diffsFiles" contains "fileName", assigned category "category" and annotated lines in "lines", divided into "afterChange" and "beforeChange" of specific commit
 
 Example first "data/cve" entry
 ```
