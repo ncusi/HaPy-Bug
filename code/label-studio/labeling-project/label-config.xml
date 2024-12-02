@@ -1,0 +1,80 @@
+<View>
+    <Collapse bordered="true">
+        <Panel value="Bug entry">
+            <View>
+                <Header value="Dataset name:" size="5" style="font-weight: bold"/>
+                <Header value="$datasetName" size="5" style="font-weight: normal; padding-left: 3%"/>
+
+                <Header value="Project name:" size="5" style="font-weight: bold"/>
+                <Header value="$projectName" size="5" style="font-weight: normal; padding-left: 3%"/>
+
+                <Header value="CVE:" size="5" style="font-weight: bold"/>
+
+                <Header value="ID:" size="5" style="font-weight: bold; padding-left: 3%"/>
+                <Header value="$cve.id" size="5" style="font-weight: normal; padding-left: 6%"/>
+
+                <Header value="Published on:" size="5" style="font-weight: bold; padding-left: 3%"/>
+                <Header value="$cve.publicationDate" size="5" style="font-weight: normal; padding-left: 6%"/>
+
+                <Header value="Severity score:" size="5" style="font-weight: bold; padding-left: 3%"/>
+                <Header value="$cve.severityScore" size="5" style="font-weight: normal; padding-left: 6%"/>
+
+                <Header value="Summary:" size="5" style="font-weight: bold; padding-left: 3%"/>
+                <Header value="$cve.summary" size="5" style="font-weight: normal; padding-left: 6%"/>
+            </View>
+        </Panel>
+    </Collapse>
+
+    <Collapse bordered="true">
+        <Panel value="Git commits">
+            <View>
+                <HyperText name="git-commits" inline="true">
+                    <div id="git-commits-container"/>
+                </HyperText>
+            </View>
+        </Panel>
+    </Collapse>
+
+    <Collapse bordered="true">
+        <Panel value="Hyperlinks">
+            <View>
+                <HyperText name="hyperlinks" inline="true" clickableLinks="true">
+                    <div id="hyperlinks-container"/>
+                </HyperText>
+            </View>
+        </Panel>
+    </Collapse>
+
+    <Collapse bordered="true">
+        <Panel value="Bug type">
+            <View>
+                <Text name="text-bug-type" value="Type of the bug:"/>
+                <Choices name="bug-type" toName="text-bug-type" choice="single-radio" required="true" requiredMessage="Specify the bug type.">
+                    <Choice value="core" hint="Bug found in core Python implementation (any Python implementation)"/>
+                    <Choice value="application/library" hint="Bug found in application/library, whose main functionality is written in or intended for Python"/>
+                    <Choice value="other" hint="Other type of bug"/>
+                </Choices>
+            </View>
+        </Panel>
+    </Collapse>
+
+    <Collapse bordered="true">
+        <Panel value="Reviewer's confidence">
+            <View>
+                <Text name="text-reviewer-is-sure" value="Are you sure of your annotations?"/>
+                <Choices name="reviewer-is-sure" toName="text-reviewer-is-sure" required="true" requiredMessage="Specify whether you are sure of your annotations.">
+                    <Choice value="yes" hint="I am sure of my annotations"/>
+                    <Choice value="no" hint="I am not sure of my annotations"/>
+                </Choices>
+            </View>
+
+            <View>
+                <Text name="text-annotations-were-problematic" value="Were the annotations problematic?"/>
+                <Choices name="annotations-were-problematic" toName="text-annotations-were-problematic" required="true" requiredMessage="Specify whether the annotations were problematic.">
+                    <Choice value="yes" hint="Some annotations were problematic"/>
+                    <Choice value="no" hint="No annotations were problematic"/>
+                </Choices>
+            </View>
+        </Panel>
+    </Collapse>
+</View>

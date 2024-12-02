@@ -1,0 +1,14 @@
+.git-commit-message-container
+{
+    margin: 20px;
+    padding: 20px;
+
+    background: #F9F9F9;
+    border: 1px solid #DEE2E6;
+}
+
+.git-commit-message
+{
+    /* For proper display of leading whitespaces in the message */
+    white-space: pre;
+}

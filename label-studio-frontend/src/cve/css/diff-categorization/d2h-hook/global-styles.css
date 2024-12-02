@@ -1,0 +1,13 @@
+.git-diff-gui-item
+{
+    color: #E0E0E0;
+    font-weight: bold;
+
+    background-color: black;
+}
+
+/* Remove horizontal scrollbar in d2h code lines (mainly for Chrome) */
+.d2h-code-side-line ::-webkit-scrollbar
+{
+    display: none;
+}

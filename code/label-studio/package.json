@@ -1,0 +1,33 @@
+{
+    "type": "module",
+    "scripts": {
+        "clone-frontend": "git clone https://github.com/ncusi/label-studio-frontend.git",
+        "install:frontend": "npm install --legacy-peer-deps --prefix label-studio-frontend",
+        "setup": "npm run clone-frontend && npm install && npm run install:frontend",
+        "build:frontend": "npm run build:module --prefix label-studio-frontend",
+        "build:backend": "docker build -t heartexlabs/label-studio:msr-cve .",
+        "build": "npm run build:frontend && npm run build:backend",
+        "server:exists": "docker inspect label-studio_msr-cve > /dev/null 2>&1",
+        "server:kill": "npm run server:exists || exit 0 ; docker stop label-studio_msr-cve && docker rm label-studio_msr-cve",
+        "server:start": "docker run -d -p 9999:8080 --name label-studio_msr-cve -v label-studio_msr-cve_volume:/label-studio heartexlabs/label-studio:msr-cve label-studio --username admin@admin.com --password 123admin123 --user-token admin_token",
+        "server:restart": "npm run server:kill && npm run server:start",
+        "server:wait-for": "wait-on http://localhost:9999",
+        "server:tasks:import": "node scripts/api/import-tasks.js --datasets /mnt/data/CVE/final --distribution /mnt/data/CVE/final_bugs_packages.json --label-config labeling-project/label-config.xml --host localhost:9999 --token admin_token",
+        "server:tasks:export": "node scripts/api/export-tasks.js --output labeling-project/exported-tasks --host localhost:9999 --token admin_token",
+        "restart": "npm run server:restart && npm run server:wait-for && npm run server:tasks:import",
+        "remove-volume": "node scripts/remove-volume.js --name label-studio_msr-cve_volume",
+        "clear": "npm run remove-volume",
+        "all": "npm install && npm run clear && npm run setup && npm run build && npm run restart",
+        "start": "npm run clear && npm run restart",
+        "export": "npm run server:tasks:export",
+        "finish": "npm run export && npm run server:kill && npm run clear"
+    },
+    "dependencies": {
+        "axios": "^1.4.0",
+        "glob": "^10.3.3",
+        "minimist-lite": "^2.2.1",
+        "moment": "^2.29.4",
+        "wait-on": "^7.0.1",
+        "yesno": "^0.4.0"
+    }
+}
