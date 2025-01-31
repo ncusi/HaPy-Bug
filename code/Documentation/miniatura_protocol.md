@@ -4,11 +4,11 @@
   * commit message,
   * CVE info/issue description.
 
-Additionally we will have information about dataset, this can help to identyfie the project.
+Additionally we will have information about dataset, this can help to identify the project.
 
 * Bugs will be related to security issues (ie. CVE, security software bugs, etc), ie. any bug that makes software vulnerable.
 * Following datasets will be used
-  * WEB crawled commits assosciated with CVE 
+  * WEB crawled commits associated with CVE
   * Commits from CVE database
   * Bugs in py isolated bugs in python projects (Only project name).
 * User will have to annotate a diff that will include a fix to specific bug.
@@ -19,7 +19,7 @@ Where task for annotators are as follows.
 
 Primary categories:
 
-* project - any project managment files (Warning: can be source code, markup, txt) 
+* project - any project management files (Warning: can be source code, markup, txt)
 * programming - source code
 * tests - any files used for tests
 * documentation - any form of documentation
@@ -67,7 +67,7 @@ Examples:
   * https://nvd.nist.gov/vuln/detail/CVE-2021-3733
 
 b) Bug in this python application/library 
-Bug in application/library. Main functionality is in Python or is intendent for Python/
+Bug in application/library. Main functionality is in Python or is intended for Python.
 
 Examples: 
  * ansible is a python application 
@@ -89,6 +89,8 @@ For example:
 
 # Examples
 
-Model annotations can be found in **model annotations** project.
-These annotations were established by 3 experts. In the first run, the experts annotated independently. In the second run, the annotations were compared, lines with diverging annotations were discussed, and one version was chosen by consensus.
+Model annotations can be found in **model annotations** project in LabelStudio, and corresponding "model annotations_29.json" file.
+These annotations were established by 3 experts.
+In the first run, the experts annotated independently.
+In the second run, the annotations were compared, lines with diverging annotations were discussed, and one version was chosen by consensus.
 
