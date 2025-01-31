@@ -1,8 +1,9 @@
 # HaPy-Bug - Human Annotated Python Bug Resolution Dataset
+https://2025.msrconf.org/details/msr-2025-data-and-tool-showcase-track/29/HaPy-Bug-Human-Annotated-Python-Bug-Resolution-Dataset
 
-Data and code package is available on https://figshare.com/s/9cbc129a95a8fc3a9640 
+DOI: https://doi.org/10.6084/m9.figshare.24448663
 
-Structure (missing data directories are on figshare):
+Structure:
 * 'annotated_data' and 'collective' contain manual annotations extracted from label studio instance
 * 'code' contains scripts used to gather data and prepare dataset
 * 'label-studio' contains copy of label studio sources used for manual annotations
@@ -10,8 +11,10 @@ Structure (missing data directories are on figshare):
 * 'raw_data' contains gathered data before manual annotation
 * 'Paper.ipynb' contains notebook to open manual annotations and replicate paper experiments
 
-Dataset schema for automated tools is in "code/Documentation/Dataset_structure.md". 
-Annotations protocol is in "code/Documentation/miniatura_protocol.md". 
+Dataset schema for automated tools is in "code/Documentation/Dataset_structure.md"
+
+Annotations protocol is in "code/Documentation/miniatura_protocol.md"
+
 Annotations schema is as follows:
 * 'annotated_data' contains json files extracted from label studio
 * prefix letter of name of file denotes annotator, for instance "A_1_24.json" was annotated by annotator "A"
@@ -23,6 +26,9 @@ Annotations schema is as follows:
   * entry with type 'cve' contains line and file annotations
     * subentry "diffsFiles" contains "fileName", assigned category "category" and annotated lines in "lines", divided into "afterChange" and "beforeChange" of specific commit
 
+## How to use the dataset:
+Write a script to load data from "annotated_data" directory and process it according to your needs.
+
 Example first "data/cve" entry
 ```
 {'id': 'CVE-2019-11340',
@@ -31,7 +37,7 @@ Example first "data/cve" entry
  'summary': 'util/emailutils.py in Matrix Sydent before 1.0.2 mishandles registration restrictions that are based on e-mail domain, if the allowed_local_3pids option is enabled. This occurs because of potentially unwanted behavior in Python, in which an email.utils.parseaddr call on user@bad.example.net@good.example.com returns the user@bad.example.net substring.'}
 ```
 
-Corresponding example first "result" entry taken from "A_1_24.json" file, for manual annotatios of 'sydent/util/emailutils.py':
+Corresponding example first "result" entry taken from "A_1_24.json" file, for manual annotations of 'sydent/util/emailutils.py':
 ```
 [{'value': {'choices': ['application/library']},
   'id': 'g4UOah3mt_',
@@ -84,3 +90,120 @@ Corresponding example first "result" entry taken from "A_1_24.json" file, for ma
         {'lineNumber': 80, 'category': 'bug(fix)'}]}}]]}}]
 ```
 
+## Data sourced from Github projects:
+* 23andMe
+* aaugustin
+* advisories
+* aio-libs
+* alex
+* andialbrecht
+* ansible
+* ansible-collections
+* aresch
+* Backblaze
+* bbangert
+* bbengfort
+* black
+* blackducksoftware
+* candlepin
+* ceph
+* cookiecutter
+* crossbario
+* d0c-s4vage
+* django
+* dlitz
+* dogtagpki
+* facebook
+* fastapi
+* fchollet
+* fedora-infra
+* Flask-Middleware
+* gzpan123
+* httpie
+* httplib2
+* hynek
+* IdentityPython
+* ipython
+* jakubroztocil
+* jbarlow83
+* jdennis
+* jkbrzt
+* jpadilla
+* jptomo
+* kennethreitz
+* keras
+* keras-team
+* kovidgoyal
+* Kozea
+* latchset
+* lericson
+* lkiesow
+* luigi
+* lxml
+* marshmallow-code
+* martinpitt
+* matplotlib
+* matrix-org
+* MirahezeBots
+* mongodb
+* Morgan-Phoenix
+* mpdavis
+* nltk
+* numpy
+* nvbn
+* OpenIDC
+* open-iscsi
+* openssl
+* openstack
+* pallets
+* pandas
+* pandas-dev
+* peopledoc
+* pikepdf
+* pyca
+* pygments
+* Pylons
+* pypa
+* py-pdf
+* PySnooper
+* pytest-dev
+* python
+* python-babel
+* python-discord
+* python-pillow
+* recurly
+* rg3
+* rohe
+* ros
+* rpm-software-management
+* samuelcolvin
+* sanic
+* scottcwang
+* scrapy
+* sh4nks
+* sickcodes
+* spacy
+* spesmilo
+* starkbank
+* tadashi-aikawa
+* tensorflow
+* thanethomson
+* thefuck
+* theupdateframework
+* tiangolo
+* tlsfuzzer
+* toastdriven
+* tomoh1r
+* tornado
+* tornadoweb
+* tqdm
+* trevp
+* triaxtec
+* twisted
+* ultrajson
+* urllib3
+* vyperlang
+* yaml
+* youtube-dl
+* zeromq
+* zopefoundation
