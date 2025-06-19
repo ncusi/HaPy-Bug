@@ -25,5 +25,5 @@ six==1.16.0
 soupsieve==2.4.1
 tqdm==4.65.0
 unidiff==0.7.3
-urllib3==2.0.2
+urllib3==2.5.0
 validators==0.20.0
