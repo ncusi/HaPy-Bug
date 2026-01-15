@@ -53,6 +53,6 @@
     "new": "hexo new"
   },
   "devDependencies": {
-    "hexo-deployer-aws-s3": "^1.0.2"
+    "hexo-deployer-aws-s3": "^1.1.1"
   }
 }
