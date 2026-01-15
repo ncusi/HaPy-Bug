@@ -158,6 +158,6 @@
   },
   "dependencies": {
     "lodash.clonedeep": "^4.5.0",
-    "webpack-dev-server": "^4.13.3"
+    "webpack-dev-server": "^5.2.1"
   }
 }
