@@ -15,7 +15,7 @@ pandas==2.0.2
 Pillow==10.2.0
 pyarrow==14.0.1
 PyGithub==1.58.2
-Pygments==2.15.0
+Pygments==2.20.0
 pymongo==4.6.1
 pyparsing==3.0.9
 python-dateutil==2.8.2
