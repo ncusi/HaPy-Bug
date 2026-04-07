@@ -20,7 +20,7 @@ pymongo==4.6.1
 pyparsing==3.0.9
 python-dateutil==2.8.2
 PyYAML==6.0
-requests==2.31.0
+requests==2.33.0
 six==1.16.0
 soupsieve==2.4.1
 tqdm==4.65.0
